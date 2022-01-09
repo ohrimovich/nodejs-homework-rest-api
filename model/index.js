@@ -6,12 +6,12 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-const listContacts = async () => {
+const listContacts = () => {
   return contacts;
 }
 
-const getContactById = async (contactId) => {
-    const [contact] = contacts.filter(contact => contact.id === contactId);
+const getContactById = (contactId) => {
+    const contact = contacts.find(contact => contact.id === contactId);
   return contact;
 }
 
