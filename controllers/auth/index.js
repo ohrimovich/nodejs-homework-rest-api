@@ -42,4 +42,14 @@ const logout = async (req, res, next) => {
         .json({ status: 'sucsses', code: HttpCode.NO_CONTENT, data: {} })
 }
 
-export {registration, login, logout}
+const getCurrentUser = async (req, res, next) => {
+    const currentUser = req.user;
+    res
+        .status(HttpCode.OK)
+        .json({
+            status: 'sucsses', code: HttpCode.OK, data: {
+                email: currentUser.email,
+                subscription: currentUser.role,
+    } })
+} 
+export {registration, login, logout, getCurrentUser}
