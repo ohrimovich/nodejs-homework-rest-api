@@ -15,5 +15,8 @@ const create = async (body) => {
 const updateToken = async (id, token) => {
     return await User.updateOne({_id: id}, {token})
 }
-export default{findById, findByEmail, create, updateToken}
+const updateAvatar = async (id, avatar, idAvatarCloud = null) => {
+    return await User.updateOne({_id: id}, {avatar, idAvatarCloud})
+}
+export default{findById, findByEmail, create, updateToken, updateAvatar}
     
