@@ -19,8 +19,8 @@ const uploadAvatar = async (req, res, next) => {
         .json({ status: 'succses', code: HttpCode.OK, data: {avatarUrl} })
 }
 const verifyUser = async (req, res, next) => {
-    console.log("dfbdfbdfbdfb");
     const verifyToken = req.params.token
+    console.log(verifyToken);
     const userFromToken =  await repositoryUsers.findByVerifyToken(verifyToken)
     if (userFromToken) {
         await repositoryUsers.updateVerify(userFromToken.id, true)
