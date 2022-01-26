@@ -54,7 +54,7 @@ const userSchema = new Schema({
         },
         verifyTokenEmail: {
             type: String,
-            default: randomUUID(),
+            default: randomUUID,
         },
     
   
